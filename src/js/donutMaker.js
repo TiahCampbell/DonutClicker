@@ -9,8 +9,10 @@ function Donuts() {
         if(this._count < 0){
             this._count = 0;
             return this._count;
-        };
+        }
+        else{
         return this._count;
+        }
     };
 
 };
@@ -20,18 +22,25 @@ function AutoClickers() {
     this._cost = 100;
     
     this.addAutoClicker = function(donuts){
-        donuts._count -= this._cost;
-        this._count += 1;
-        this._cost *= 1.1;
-        this._cost = Math.round(this._cost)
+        if(donuts._count >= this._cost){
+            donuts._count -= this._cost;
+            this._count += 1;
+            this._cost *= 1.1;
+            this._cost = Math.round(this._cost);
+        }
+        else{
+        console.log('You do not have enough donuts to purchase this PowerUp');
+        }
     };
 
     this.getAutoClickerCount = function(){
         if(this._count < 0){
             this._count = 0;
             return this._count;
-        };
+        }
+        else{
         return this._count;
+        }
     };
 
     // this.getAutoClickerCost = function(){
@@ -46,6 +55,3 @@ function AutoClickers() {
 const myDonuts = new Donuts();
 const myAutoClickers = new AutoClickers();
 myDonuts.addDonut();
-myAutoClickers.addAutoClicker(myDonuts);
-myAutoClickers.addAutoClicker(myDonuts);
-myAutoClickers.addAutoClicker(myDonuts);
