@@ -21,7 +21,9 @@ function AutoClickers() {
     
     this.addAutoClicker = function(donuts){
         donuts._count -= this._cost;
-        this._count +=  1;
+        this._count += 1;
+        this._cost *= 1.1;
+        this._cost = Math.round(this._cost)
     };
 
     this.getAutoClickerCount = function(){
@@ -31,9 +33,19 @@ function AutoClickers() {
         };
         return this._count;
     };
+
+    // this.getAutoClickerCost = function(){
+    //     if(this._cost < 0){
+    //         this._cost = 0;
+    //         return this._cost;
+    //     };
+    //     return this._cost;
+    // }
 };
 
 const myDonuts = new Donuts();
 const myAutoClickers = new AutoClickers();
 myDonuts.addDonut();
+myAutoClickers.addAutoClicker(myDonuts);
+myAutoClickers.addAutoClicker(myDonuts);
 myAutoClickers.addAutoClicker(myDonuts);
