@@ -4,9 +4,15 @@ function DonutMaker() {
     this._autoClickersCost = 100;
     this._donutMultipliersOwned = 0;
     this._donutMultipliersCost = 10;
+    this._donutMultiplier = 1.2;
 
     this.addDonut = function(){
-        this._donutCount +=  1;
+        if(this._donutMultipliersOwned == 0){
+            this._donutCount += 1;
+        }
+        else{
+        this._donutCount += (1 * this._donutMultiplier);
+        }
     };
     
     this.getDonutCount = function(){
@@ -19,16 +25,19 @@ function DonutMaker() {
         }
     };
 
-    this.donutClick = function(obj){
-        obj._donutCount += obj._autoClickersOwned;
-        console.log(obj._donutCount);
+    this.autoAddDonut = function(obj){
+        if(obj._donutMultipliersOwned == 0){
+            obj._donutCount += obj._autoClickersOwned;
+        }
+        else{
+            obj._donutCount += (obj._autoClickersOwned * obj._donutMultiplier);
+        }
     };
 
     this.activateAutoClickers = function(obj){
-        setInterval(this.donutClick, 1000, obj);
-    }
+        setInterval(this.autoAddDonut, 1000, obj);
+    };
 
-    
     this.addAutoClicker = function(){
         if(this._donutCount >= this._autoClickersCost){
             this._donutCount -= this._autoClickersCost;
