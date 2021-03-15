@@ -1,7 +1,9 @@
 function DonutMaker() {
-    this._donutCount = 0;
+    this._donutCount = 400;
     this._autoClickersOwned = 0;
     this._autoClickersCost = 100;
+    this._donutMultipliersOwned = 0;
+    this._donutMultipliersCost = 10;
 
     this.addDonut = function(){
         this._donutCount +=  1;
@@ -39,13 +41,35 @@ function DonutMaker() {
         }
     };
 
-    this.getAutoClickerCount = function(){
+    this.getAutoClickersOwned = function(){
         if(this._autoClickersOwned < 0){
             this._autoClickersOwned = 0;
             return this._autoClickersOwned;
         }
         else{
         return this._autoClickersOwned;
+        }
+    };
+
+    this.addDonutMultiplier = function(){
+        if(this._donutCount >= this._donutMultipliersCost){
+            this._donutCount -= this._donutMultipliersCost;
+            this._donutMultipliersOwned += 1;
+            this._donutMultipliersCost *= 1.1;
+            this._donutMultipliersCost = Math.round(this._donutMultipliersCost);
+        }
+        else{
+        console.log('You do not have enough donuts to purchase this PowerUp');
+        }
+    };
+
+    this.getDonutMultipliersOwned = function(){
+        if(this._donutMultipliersOwned < 0){
+            this._donutMultipliersOwned = 0;
+            return this._donutMultipliersOwned;
+        }
+        else{
+        return this._donutMultipliersOwned;
         }
     };
 };
@@ -55,4 +79,5 @@ function DonutMaker() {
 // myDonutMaker.addAutoClicker();
 // myDonutMaker.addAutoClicker();
 // myDonutMaker.activateAutoClickers(myDonutMaker);
+// myDonutMaker.addDonutMultiplier();
 
