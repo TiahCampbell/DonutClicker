@@ -4,14 +4,13 @@ function DonutMaker() {
     this._autoClickersCost = 100;
     this._donutMultipliersOwned = 0;
     this._donutMultipliersCost = 10;
-    this._donutMultiplier = 1.2;
 
     this.addDonut = function(){
         if(this._donutMultipliersOwned == 0){
             this._donutCount += 1;
         }
         else{
-        this._donutCount += (1 * this._donutMultiplier);
+        this._donutCount += (1 * Math.pow(1.2, this._donutMultipliersOwned));
         }
     };
     
@@ -30,7 +29,7 @@ function DonutMaker() {
             obj._donutCount += obj._autoClickersOwned;
         }
         else{
-            obj._donutCount += (obj._autoClickersOwned * obj._donutMultiplier);
+            obj._donutCount += (obj._autoClickersOwned * Math.pow(1.2, obj._donutMultipliersOwned));
         }
     };
 
