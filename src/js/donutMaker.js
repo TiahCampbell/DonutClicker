@@ -1,32 +1,38 @@
-function Donuts() {
-    this._count = 200;
+function DonutMaker() {
+    this._donutCount = 0;
+    this._autoClickersOwned = 0;
+    this._autoClickersCost = 100;
 
     this.addDonut = function(){
-        this._count +=  1;
+        this._donutCount +=  1;
     };
     
     this.getDonutCount = function(){
-        if(this._count < 0){
-            this._count = 0;
-            return this._count;
+        if(this._donutCount < 0){
+            this._donutCount = 0;
+            return this._donutCount;
         }
         else{
-        return this._count;
+        return this._donutCount;
         }
     };
 
-};
+    this.donutClick = function(obj){
+        obj._donutCount += obj._autoClickersOwned;
+        console.log(obj._donutCount);
+    };
 
-function AutoClickers() {
-    this._count = 0;
-    this._cost = 100;
+    this.activateAutoClickers = function(obj){
+        setInterval(this.donutClick, 1000, obj);
+    }
+
     
-    this.addAutoClicker = function(donuts){
-        if(donuts._count >= this._cost){
-            donuts._count -= this._cost;
-            this._count += 1;
-            this._cost *= 1.1;
-            this._cost = Math.round(this._cost);
+    this.addAutoClicker = function(){
+        if(this._donutCount >= this._autoClickersCost){
+            this._donutCount -= this._autoClickersCost;
+            this._autoClickersOwned += 1;
+            this._autoClickersCost *= 1.1;
+            this._autoClickersCost = Math.round(this._autoClickersCost);
         }
         else{
         console.log('You do not have enough donuts to purchase this PowerUp');
@@ -34,24 +40,19 @@ function AutoClickers() {
     };
 
     this.getAutoClickerCount = function(){
-        if(this._count < 0){
-            this._count = 0;
-            return this._count;
+        if(this._autoClickersOwned < 0){
+            this._autoClickersOwned = 0;
+            return this._autoClickersOwned;
         }
         else{
-        return this._count;
+        return this._autoClickersOwned;
         }
     };
-
-    // this.getAutoClickerCost = function(){
-    //     if(this._cost < 0){
-    //         this._cost = 0;
-    //         return this._cost;
-    //     };
-    //     return this._cost;
-    // }
 };
 
-const myDonuts = new Donuts();
-const myAutoClickers = new AutoClickers();
-myDonuts.addDonut();
+// const myDonutMaker = new DonutMaker();
+// myDonutMaker.addDonut();
+// myDonutMaker.addAutoClicker();
+// myDonutMaker.addAutoClicker();
+// myDonutMaker.activateAutoClickers(myDonutMaker);
+
