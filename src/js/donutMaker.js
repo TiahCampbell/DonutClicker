@@ -1,25 +1,25 @@
 function DonutMaker() {
-    this._count = 400;
-    this._aCCount = 0;
-    this._aCCost = 100;
+    this._donutCount = 0;
+    this._autoClickersOwned = 0;
+    this._autoClickersCost = 100;
 
     this.addDonut = function(){
-        this._count +=  1;
+        this._donutCount +=  1;
     };
     
     this.getDonutCount = function(){
-        if(this._count < 0){
-            this._count = 0;
-            return this._count;
+        if(this._donutCount < 0){
+            this._donutCount = 0;
+            return this._donutCount;
         }
         else{
-        return this._count;
+        return this._donutCount;
         }
     };
 
     this.donutClick = function(obj){
-        obj._count += obj._aCCount;
-        console.log(obj._count);
+        obj._donutCount += obj._autoClickersOwned;
+        console.log(obj._donutCount);
     };
 
     this.activateAutoClickers = function(obj){
@@ -28,11 +28,11 @@ function DonutMaker() {
 
     
     this.addAutoClicker = function(){
-        if(this._count >= this._aCCost){
-            this._count -= this._aCCost;
-            this._aCCount += 1;
-            this._aCCost *= 1.1;
-            this._aCCost = Math.round(this._aCCost);
+        if(this._donutCount >= this._autoClickersCost){
+            this._donutCount -= this._autoClickersCost;
+            this._autoClickersOwned += 1;
+            this._autoClickersCost *= 1.1;
+            this._autoClickersCost = Math.round(this._autoClickersCost);
         }
         else{
         console.log('You do not have enough donuts to purchase this PowerUp');
@@ -40,19 +40,19 @@ function DonutMaker() {
     };
 
     this.getAutoClickerCount = function(){
-        if(this._aCCount < 0){
-            this._aCCount = 0;
-            return this._aCCount;
+        if(this._autoClickersOwned < 0){
+            this._autoClickersOwned = 0;
+            return this._autoClickersOwned;
         }
         else{
-        return this._aCCount;
+        return this._autoClickersOwned;
         }
     };
 };
 
-const myDonutMaker = new DonutMaker();
-myDonutMaker.addDonut();
-myDonutMaker.addAutoClicker();
-myDonutMaker.addAutoClicker();
-myDonutMaker.activateAutoClickers(myDonutMaker);
+// const myDonutMaker = new DonutMaker();
+// myDonutMaker.addDonut();
+// myDonutMaker.addAutoClicker();
+// myDonutMaker.addAutoClicker();
+// myDonutMaker.activateAutoClickers(myDonutMaker);
 
