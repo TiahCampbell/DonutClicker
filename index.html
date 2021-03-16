@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 4 Project</title>
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <header>
     <h1>Donut Clicker</h1>
@@ -12,12 +14,43 @@
     <div class="dropdown">
         <button onclick="navDropdown()" class="dropbtn">More Info</button>
         <div id="navDropdown" class="dropdown-content">
-          <a href="https://www.youtube.com/watch?v=GXrG3gpN9bQ" target="_blank" rel="noopener noreferrer">Fred the Baker Baking Company</a>
-          <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" rel="noopener noreferrer">The Original Cookie Clicker</a>
-          <a href=""></a>
+            <a href="https://www.youtube.com/watch?v=GXrG3gpN9bQ" target="_blank" rel="noopener noreferrer">Fred the
+                Baker Baking Company</a>
+            <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" rel="noopener noreferrer">The Original
+                Cookie Clicker</a>
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">Meet the
+                Creator</button>
         </div>
-      </div>
+    </div>
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <h1>About Me</h1>
+                <p>My experience as a personal and group fitness trainer built a foundation of consistency and
+                    commitment. It also taught me to be comfortable and effective with communicating new concepts to
+                    customers and teammates. Currently I am in a fourteen week program to become a software developer. A
+                    year ago I was researching to find a career I could grow in. My brother, a computer scientist, knew
+                    I enjoyed puzzles and problem solving. He suggested a coding bootcamp to me and I have been hooked
+                    since day one of classes at WeCanCodeIt. I adapted from building targeted workouts, to building user
+                    focused full stack software. I cannot wait to see where this journey takes me.</p>
+                <section id="getInTouch">
+                    <a href="https://www.linkedin.com/in/tiah-campbell-106226133/">
+                        <img src="./images/Linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/TiahCampbell">
+                        <img src="./images/Github.png" alt="Github">
+                    </a>
+                    <a href="https://tiahcampbell.github.io/">
+                        <img src="./images/Portfolio.png" alt="Portfolio">
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
 </header>
+
 <body>
     <div class="container">
         <div class="donuts">
@@ -36,4 +69,5 @@
     <script src="/src/js/app.js"></script>
     <script src="/src/js/donutMaker.js"></script>
 </body>
+
 </html>
