@@ -5,8 +5,9 @@ class DonutMaker {
         this._autoClickersCost = 100;
         this._donutMultipliersOwned = 0;
         this._donutMultipliersCost = 10;
-
-        this.addDonut = function () {
+        // this._autoClickerInterval = self.setInterval(this.autoAddDonut, 1000);
+    }
+        addDonut = () => {
             if (this._donutMultipliersOwned == 0) {
                 this._donutCount += 1;
             }
@@ -15,7 +16,7 @@ class DonutMaker {
             }
         };
 
-        this.getDonutCount = function () {
+        getDonutCount = () => {
             if (this._donutCount < 0) {
                 this._donutCount = 0;
                 return this._donutCount;
@@ -25,7 +26,7 @@ class DonutMaker {
             }
         };
 
-        this.autoAddDonut = function (obj) {
+        autoAddDonut = (obj) => {
             if (obj._donutMultipliersOwned == 0) {
                 obj._donutCount += obj._autoClickersOwned;
             }
@@ -34,11 +35,11 @@ class DonutMaker {
             }
         };
 
-        this.activateAutoClickers = function (obj) {
-            setInterval(this.autoAddDonut, 1000, obj);
-        };
+        // activateAutoClickers = () => {
+        //     setInterval(this.autoAddDonut, 1000);
+        // };
 
-        this.addAutoClicker = function () {
+        addAutoClicker = () => {
             if (this._donutCount >= this._autoClickersCost) {
                 this._donutCount -= this._autoClickersCost;
                 this._autoClickersOwned += 1;
@@ -50,7 +51,7 @@ class DonutMaker {
             }
         };
 
-        this.getAutoClickersOwned = function () {
+        getAutoClickersOwned = () => {
             if (this._autoClickersOwned < 0) {
                 this._autoClickersOwned = 0;
                 return this._autoClickersOwned;
@@ -60,7 +61,7 @@ class DonutMaker {
             }
         };
 
-        this.addDonutMultiplier = function () {
+        addDonutMultiplier = () => {
             if (this._donutCount >= this._donutMultipliersCost) {
                 this._donutCount -= this._donutMultipliersCost;
                 this._donutMultipliersOwned += 1;
@@ -72,7 +73,7 @@ class DonutMaker {
             }
         };
 
-        this.getDonutMultipliersOwned = function () {
+        getDonutMultipliersOwned = () => {
             if (this._donutMultipliersOwned < 0) {
                 this._donutMultipliersOwned = 0;
                 return this._donutMultipliersOwned;
@@ -81,7 +82,7 @@ class DonutMaker {
                 return this._donutMultipliersOwned;
             }
         };
-    }
+    
 };
 
 // const myDonutMaker = new DonutMaker();
