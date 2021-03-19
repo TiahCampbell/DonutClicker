@@ -62,6 +62,10 @@ class DonutMaker {
             }
         };
 
+        getAutoClickersCost = () => {
+            return this._autoClickersCost;
+        };
+
         addDonutMultiplier = () => {
             if (this._donutCount >= this._donutMultipliersCost) {
                 this._donutCount -= this._donutMultipliersCost;
@@ -82,6 +86,10 @@ class DonutMaker {
             else {
                 return this._donutMultipliersOwned;
             }
+        };
+
+        getDonutMultipliersCost = () => {
+            return this._donutMultipliersCost;
         };
 
         getDonutsPerClick = () => {
