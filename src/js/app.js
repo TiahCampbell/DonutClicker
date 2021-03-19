@@ -3,22 +3,23 @@ const appDonutMaker = new DonutMaker();
 
 const donutCountElement = document.querySelector('.donutCount');
 const donutButton = document.querySelector(".donutButton");
-const autoClickerCountElement = document.querySelector('.autoClickerCount')
+const autoClickerCountElement = document.querySelector('.autoClickerCount');
 const autoClickerButton = document.querySelector(".autoClickerButton");
-const donutMultiplierCountElement = document.querySelector('.donutMultiplierCount')
+const donutMultiplierCountElement = document.querySelector('.donutMultiplierCount');
 const donutMultiplierButton = document.querySelector(".donutMultiplierButton");
-const donutsPerClickElement = document.querySelector('.donutsPerClick')
-const autoClickerCostElement = document.querySelector('.autoClickerCost')
-const donutMultiplierCostElement = document.querySelector('.donutMultiplierCost')
+const donutsPerClickElement = document.querySelector('.donutsPerClick');
+const autoClickerCostElement = document.querySelector('.autoClickerCost');
+const donutMultiplierCostElement = document.querySelector('.donutMultiplierCost');
+const gameResetButton = document.querySelector('.gameResetButton');
 
 
 const updateGame = (donutMaker)=>{
-    donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount();
+    donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount().toFixed(0);
     autoClickerCountElement.innerText = "Auto Clickers Owned: " + donutMaker.getAutoClickersOwned();
     donutMultiplierCountElement.innerText = "Donut Multipliers Owned: " + donutMaker.getDonutMultipliersOwned();
-    donutsPerClickElement.innerText = "Donuts Per Click: " + donutMaker.getDonutsPerClick();
-    autoClickerCostElement.innerText = "Purchase Cost: " + donutMaker.getAutoClickersCost();
-    donutMultiplierCostElement.innerText = "Purchase Cost: " + donutMaker.getDonutMultipliersCost();
+    donutsPerClickElement.innerText = "Donuts Per Click: " + donutMaker.getDonutsPerClick().toFixed(2);
+    autoClickerCostElement.innerText = "Purchase Cost: " + donutMaker.getAutoClickersCost() + " Donuts";
+    donutMultiplierCostElement.innerText = "Purchase Cost: " + donutMaker.getDonutMultipliersCost() + " Donuts";
 
 
     if (donutMaker._donutCount >= donutMaker._autoClickersCost){
@@ -57,10 +58,17 @@ const clickDonutMultiplierButton = (button, donutMaker) =>{
     });
 }
 
+const clickResetButton = (button, donutMaker) =>{
+    button.addEventListener('click', ()=>{
+        donutMaker.resetGame();
+        updateGame(donutMaker);
+    });
+}
 
 clickDonutButton(donutButton, appDonutMaker);
 clickAutoClickerButton(autoClickerButton, appDonutMaker);
 clickDonutMultiplierButton(donutMultiplierButton, appDonutMaker);
+clickResetButton(gameResetButton, appDonutMaker);
 updateGame(appDonutMaker);
 let autoClickerInterval = setInterval(appDonutMaker.autoAddDonut, 1000, appDonutMaker);
 let interval = setInterval(updateGame, 500, appDonutMaker);
