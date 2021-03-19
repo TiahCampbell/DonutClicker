@@ -7,11 +7,13 @@ const autoClickerCountElement = document.querySelector('.autoClickerCount')
 const autoClickerButton = document.querySelector(".autoClickerButton");
 const donutMultiplierCountElement = document.querySelector('.donutMultiplierCount')
 const donutMultiplierButton = document.querySelector(".donutMultiplierButton");
+const donutsPerClickElement = document.querySelector('.donutsPerClick')
 
 const updateGame = (donutMaker)=>{
-    donutCountElement.innerText = donutMaker.getDonutCount();
-    autoClickerCountElement.innerText = donutMaker.getAutoClickersOwned();
-    donutMultiplierCountElement.innerText = donutMaker.getDonutMultipliersOwned();
+    donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount();
+    autoClickerCountElement.innerText = "Auto Clickers Owned: " + donutMaker.getAutoClickersOwned();
+    donutMultiplierCountElement.innerText = "Donut Multipliers Owned: " + donutMaker.getDonutMultipliersOwned();
+    donutsPerClickElement.innerText = "Donuts Per Click: " + donutMaker.getDonutsPerClick();
 
     if (donutMaker._donutCount >= donutMaker._autoClickersCost){
         autoClickerButton.style.backgroundColor = "green";

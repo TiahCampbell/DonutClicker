@@ -5,6 +5,7 @@ class DonutMaker {
         this._autoClickersCost = 100;
         this._donutMultipliersOwned = 0;
         this._donutMultipliersCost = 10;
+        this._donutsPerClick = 1;
         // this._autoClickerInterval = self.setInterval(this.autoAddDonut, 1000);
     }
         addDonut = () => {
@@ -80,6 +81,17 @@ class DonutMaker {
             }
             else {
                 return this._donutMultipliersOwned;
+            }
+        };
+
+        getDonutsPerClick = () => {
+            if (this._donutMultipliersOwned == 0) {
+                this._donutsPerClick = 1;
+                return this._donutsPerClick;
+            }
+            else {
+                this._donutsPerClick = (1 * Math.pow(1.2, this._donutMultipliersOwned));
+                return this._donutsPerClick;
             }
         };
     
