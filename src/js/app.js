@@ -1,3 +1,22 @@
+const appDonutMaker = new DonutMaker();
+
+const donutCountElement = document.querySelector('.donutCount');
+const donutButton = document.querySelector(".donutButton");
+
+const updateGame = (donutMaker)=>{
+    donutCountElement.innerText = donutMaker.getDonutCount();
+}
+
+const clickDonutButton = (button, donutMaker) =>{
+    button.addEventListener('click', ()=>{
+        donutMaker.addDonut();
+        updateGame(donutMaker);
+    });
+}
+
+clickDonutButton(donutButton, appDonutMaker);
+updateGame(appDonutMaker);
+
 function navDropdown() {
     document.getElementById("navDropdown").classList.toggle("show");
 }
