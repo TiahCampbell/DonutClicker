@@ -11,7 +11,7 @@ const donutsPerClickElement = document.querySelector('.donutsPerClick');
 const autoClickerCostElement = document.querySelector('.autoClickerCost');
 const donutMultiplierCostElement = document.querySelector('.donutMultiplierCost');
 const gameResetButton = document.querySelector('.gameResetButton');
-
+const donutsPerMinuteElement = document.querySelector('.donutsPerMinute');
 
 const updateGame = (donutMaker)=>{
     donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount().toFixed(0);
@@ -20,20 +20,21 @@ const updateGame = (donutMaker)=>{
     donutsPerClickElement.innerText = "Donuts Per Click: " + donutMaker.getDonutsPerClick().toFixed(2);
     autoClickerCostElement.innerText = "Purchase Cost: " + donutMaker.getAutoClickersCost() + " Donuts";
     donutMultiplierCostElement.innerText = "Purchase Cost: " + donutMaker.getDonutMultipliersCost() + " Donuts";
+    donutsPerMinuteElement.innerText = "Donuts Per Minute: " + donutMaker.getDonutsPerMinute().toFixed(2);
 
 
     if (donutMaker._donutCount >= donutMaker._autoClickersCost){
-        autoClickerButton.style.backgroundColor = "green";
+        autoClickerButton.style.backgroundColor = "black";
     }
     else{
-        autoClickerButton.style.backgroundColor = "red";
-    }
+        autoClickerButton.style.backgroundColor = "grey";
+    };
     if (donutMaker._donutCount >= donutMaker._donutMultipliersCost){
-        donutMultiplierButton.style.backgroundColor = "green";
+        donutMultiplierButton.style.backgroundColor = "black";
     }
     else{
-        donutMultiplierButton.style.backgroundColor = "red";
-    }
+        donutMultiplierButton.style.backgroundColor = "grey";
+    };
     
 }
 

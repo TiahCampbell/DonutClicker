@@ -6,6 +6,7 @@ class DonutMaker {
         this._donutMultipliersOwned = 0;
         this._donutMultipliersCost = 10;
         this._donutsPerClick = 1;
+        this._donutsPerMinute = 0;
     }
 
         addDonut = () => {
@@ -96,6 +97,17 @@ class DonutMaker {
             else {
                 this._donutsPerClick = (1 * Math.pow(1.2, this._donutMultipliersOwned));
                 return this._donutsPerClick;
+            }
+        };
+
+        getDonutsPerMinute = () => {
+            if (this._donutMultipliersOwned == 0) {
+                this._donutsPerMinute = this._autoClickersOwned * 60;
+                return this._donutsPerMinute;
+            }
+            else {
+                this._donutsPerMinute = this._autoClickersOwned * Math.pow(1.2, this._donutMultipliersOwned) * 60;
+                return this._donutsPerMinute
             }
         };
 

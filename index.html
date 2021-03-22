@@ -7,12 +7,12 @@
     <title>Module 4 Project</title>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 </head>
 <header>
-    <h1>Donut Clicker</h1>
-    <h2>The Donut Making Game</h2>
-    <div class="dropdown">
-        <button onclick="navDropdown()" class="dropbtn">More Info</button>
+       <div class="dropdown">
+        <button onclick="navDropdown()" class="dropbtn"><img src="./images/Dots.png" alt="More Info"></button>
         <div id="navDropdown" class="dropdown-content">
             <a href="https://www.youtube.com/watch?v=GXrG3gpN9bQ" target="_blank" rel="noopener noreferrer">Fred the
                 Baker Baking Company</a>
@@ -20,6 +20,7 @@
                 Cookie Clicker</a>
             <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">Meet the
                 Creator</button>
+            <button class="gameResetButton">Reset Game</button>
         </div>
     </div>
     <div id="id01" class="w3-modal">
@@ -27,7 +28,7 @@
             <div class="w3-container">
                 <span onclick="document.getElementById('id01').style.display='none'"
                     class="w3-button w3-display-topright">&times;</span>
-                <h1>About Me</h1>
+                <p>About Me</p>
                 <p>My experience as a personal and group fitness trainer built a foundation of consistency and
                     commitment. It also taught me to be comfortable and effective with communicating new concepts to
                     customers and teammates. Currently I am in a fourteen week program to become a software developer. A
@@ -52,28 +53,33 @@
 </header>
 
 <body>
+    <div class="donuts">
+        <div class="donutsPerMinute"></div>
+        <div class="donutCount"></div>
+        <div class="donutsPerClick"></div>
+    </div>
     <div class="container">
-        <div class="donuts">
-            <div class="donutCount"></div>
-            <div class="donutsPerClick"></div>
-            <button class="donutButton">MAKE DONUT</button>
+        <div class="click">
+            <button class="donutButton"><img src="images/YellowDonut.png" alt="Donut"></button>
         </div>
-        <div class="autoClickers">
-            <div class="autoClickerCount"></div>
-            <div class="autoClickerCost"></div>
-            <button class="autoClickerButton">BUY AUTOCLICKER</button>
-        </div>
-        <div class="donutMultipliers">
-            <div class="donutMultiplierCount"></div>
-            <div class="donutMultiplierCost"></div>
-            <button class="donutMultiplierButton">BUY DONUT MULTIPLIER</button>
-        </div>
-        <div class="gameReset">
-            <button class="gameResetButton">RESET GAME</button>
+        <div class="research">
+            <div class="autoClickers">
+                <div class="autoClickerCount"></div>
+                <div class="autoClickerCost"></div>
+                <button class="autoClickerButton">BUY AUTOCLICKER</button>
+            </div>
+            <div class="donutMultipliers">
+                <div class="donutMultiplierCount"></div>
+                <div class="donutMultiplierCost"></div>
+                <button class="donutMultiplierButton">BUY DONUT MULTIPLIER</button>
+            </div>
         </div>
     </div>
     <script src="/src/js/donutMaker.js"></script>
     <script src="/src/js/app.js"></script>
 </body>
+<footer>
+    &copy; 2021 Tiah Campbell
+</footer>
 
 </html>
