@@ -7,6 +7,8 @@ class DonutMaker {
         this._donutMultipliersCost = 10;
         this._donutsPerClick = 1;
         this._donutsPerMinute = 0;
+        this._bakeryLevel = 1;
+        this._bakeryUpgradeCost = 1000000;
     }
 
         addDonut = () => {
@@ -38,7 +40,7 @@ class DonutMaker {
         };
        
         addAutoClicker = () => {
-            if (this._donutCount >= this._autoClickersCost) {
+            if (this._donutCount >= this._autoClickersCost && this._bakeryLevel > this._autoClickersOwned) {
                 this._donutCount -= this._autoClickersCost;
                 this._autoClickersOwned += 1;
                 this._autoClickersCost *= 1.1;
@@ -64,7 +66,7 @@ class DonutMaker {
         };
 
         addDonutMultiplier = () => {
-            if (this._donutCount >= this._donutMultipliersCost) {
+            if (this._donutCount >= this._donutMultipliersCost && this._donutMultipliersOwned < 11) {
                 this._donutCount -= this._donutMultipliersCost;
                 this._donutMultipliersOwned += 1;
                 this._donutMultipliersCost *= 1.1;
@@ -109,6 +111,22 @@ class DonutMaker {
                 this._donutsPerMinute = this._autoClickersOwned * Math.pow(1.2, this._donutMultipliersOwned) * 60;
                 return this._donutsPerMinute
             }
+        };
+
+        addBakeryLevel = () => {
+            if (this._donutCount >= this._bakeryUpgradeCost) {
+                this._donutCount -= this._bakeryUpgradeCost;
+                this._bakeryLevel += 1;
+                this._bakeryUpgradeCost *= 5;
+            }
+        };
+
+        getBakeryLevel = () => {
+            return this._bakeryLevel;
+        };
+
+        getBakeryUpgradeCost = () => {
+            return this._bakeryUpgradeCost;
         };
 
         resetGame = () => {

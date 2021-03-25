@@ -10,9 +10,9 @@ html {
   font-size: 16px;
   margin-top: 2.5em;
   color: ivory;
-  background: url(../../images/Chalkboard.jpg) no-repeat center center fixed;
-  background-size: cover;
- 
+  background: url(../../images/Transparent.png);
+  background-color: black;
+  /* background-size: cover; */
 }
 
 .donuts {
@@ -48,41 +48,80 @@ html {
 }
 
 .autoClickers {
-  padding: 2em;
-  font-size: x-large;
+  padding: 1em;
+  font-size: large;
 }
 
 .donutMultipliers {
-  padding: 2em;
-  font-size: x-large;
+  padding: 1em;
+  font-size: large;
+}
+
+.bakeryUpgrades {
+  padding: 1em;
+  font-size: large;
 }
 
 
 .donutButton {
- background: url(../../images/Transparent.png) no-repeat center center fixed;
- background-size: cover;
+ background: url(../../images/Transparent.png);
  padding: 1em;
+ border: 2px solid ivory;
  cursor: pointer;
+ -moz-box-shadow: 0 0 5px grey;
+ -webkit-box-shadow: 0 0 5px grey;
+ box-shadow: 0 0 5px grey;
+}
+
+.bakeryUpgradeButton {
+  border: 2px solid ivory;
+  background: url(../../images/Transparent.png);
+  color: ivory;
+  padding: 1em;
+  cursor: pointer;
+  -moz-box-shadow: 0 0 5px grey;
+  -webkit-box-shadow: 0 0 5px grey;
+  box-shadow: 0 0 5px grey;
+}
+
+.bakeryUpgradeButton:hover {
+  -moz-box-shadow: 0 0 10px grey;
+  -webkit-box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey;
 }
 
 .autoClickerButton {
   border: 2px solid ivory;
-  background: url(../../images/Transparent.png) no-repeat center center fixed;
-  background-size: cover;
-  /* background-color: #000000; */
+  background: url(../../images/Transparent.png);
   color: ivory;
   padding: 1em;
   cursor: pointer;
+  -moz-box-shadow: 0 0 5px grey;
+  -webkit-box-shadow: 0 0 5px grey;
+  box-shadow: 0 0 5px grey;
+}
+
+.autoClickerButton:hover {
+  -moz-box-shadow: 0 0 10px grey;
+  -webkit-box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey;
 }
 
 .donutMultiplierButton {
   border: 2px solid ivory;
-  background: url(../../images/Transparent.png) no-repeat center center fixed;
-  background-size: cover;
-  /* background-color: #000000; */
+  background: url(../../images/Transparent.png);
   color: ivory;
   padding: 1em;
   cursor: pointer;
+  -moz-box-shadow: 0 0 5px grey;
+  -webkit-box-shadow: 0 0 5px grey;
+  box-shadow: 0 0 5px grey;
+}
+
+.donutMultiplierButton:hover {
+  -moz-box-shadow: 0 0 10px grey;
+  -webkit-box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey;
 }
 
 .gameResetButton {
@@ -99,6 +138,9 @@ html {
 
 .donutButton:hover {
   background-color: #000000;
+  -moz-box-shadow: 0 0 10px grey;
+  -webkit-box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey;
 }
 
 .gameResetButton:hover {
@@ -121,9 +163,8 @@ footer {
   font-size: large;
   margin-top: 2.5em;
   color: ivory;
-  background: url(../../images/Chalkboard.jpg) no-repeat center center fixed;
-  background-size: cover;
-  padding: 2em;
+  background: url(../../images/Transparent.png);
+  background-color: black;
   align-items: center;
  
 }
