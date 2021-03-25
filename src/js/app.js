@@ -12,6 +12,7 @@ const autoClickerCostElement = document.querySelector('.autoClickerCost');
 const donutMultiplierCostElement = document.querySelector('.donutMultiplierCost');
 const gameResetButton = document.querySelector('.gameResetButton');
 const donutsPerMinuteElement = document.querySelector('.donutsPerMinute');
+const donutButtonImage = document.querySelector('.donutButton > img');
 
 const updateGame = (donutMaker)=>{
     donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount().toFixed(0);
@@ -41,6 +42,7 @@ const updateGame = (donutMaker)=>{
 const clickDonutButton = (button, donutMaker) =>{
     button.addEventListener('click', ()=>{
         donutMaker.addDonut();
+        changeDonutImage();
         updateGame(donutMaker);
     });
 }
@@ -64,6 +66,16 @@ const clickResetButton = (button, donutMaker) =>{
         donutMaker.resetGame();
         updateGame(donutMaker);
     });
+}
+
+const changeDonutImage = () => {
+    let sprinkleColors = ['images/YellowDonut.png','images/OrangeDonut.png','images/RedDonut.png','images/LightPinkDonut.png','images/DarkPinkDonut.png','images/PurpleDonut.png','images/DarkBlueDonut.png','images/LightBlueDonut.png','images/BlueDonut.png','images/DarkGreenDonut.png','images/GreenDonut.png','images/LightGreenDonut.png'];
+    let currentColor;
+        if (!currentColor || !currentColor.length) {
+            currentColor = sprinkleColors.slice();
+            currentColor = currentColor.splice(Math.random() * currentColor.length | 0, 1);
+        };
+    donutButtonImage.src = currentColor;
 }
 
 clickDonutButton(donutButton, appDonutMaker);

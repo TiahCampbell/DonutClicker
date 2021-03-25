@@ -90,18 +90,15 @@ html {
  background-color: #000000;
  color: ivory;
  padding: 1em;
+ cursor: pointer;
+}
+
+.w3-button:hover {
+  background-color: #2b2e30;
 }
 
 .donutButton:hover {
-  background-color: #2b2e30;
-}
-
-.autoClickerButton:hover {
-  background-color: #2b2e30;
-}
-
-.donutMultiplierButton:hover {
-  background-color: #2b2e30;
+  background-color: #000000;
 }
 
 .gameResetButton:hover {
@@ -116,7 +113,6 @@ footer {
   color: ivory;
   padding: 1em 0;
   text-align: center;
-  /* padding-left: 4em; */
 }
 
 .w3-container {
@@ -141,22 +137,23 @@ footer {
 }
 
 .dropbtn {
-    position: fixed;
-    top: 0;
-    left: 0;
+ 
+    align-self: flex-start;
     background: url(../../images/Transparent.png) no-repeat center center fixed;
     background-size: cover;
     color: ivory;
-    padding: 2em;
+    padding: 1em;
     font-size: 16px;
     border: 2px solid ivory;
     cursor: pointer;
   }
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #2b2e30;
+    background-color: #000000;
   }
   .dropdown {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: inline-block;
   }
   .dropdown-content {

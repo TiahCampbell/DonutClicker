@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Module 4 Project</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    </head>
 <header>
-       <div class="dropdown">
+    <div class="donuts">
+    <section class="dropdown">
         <button onclick="navDropdown()" class="dropbtn"><img src="./images/Dots.png" alt="More Info"></button>
         <div id="navDropdown" class="dropdown-content">
             <a href="https://www.youtube.com/watch?v=GXrG3gpN9bQ" target="_blank" rel="noopener noreferrer">Fred the
@@ -22,7 +23,7 @@
                 Creator</button>
             <button class="gameResetButton">Reset Game</button>
         </div>
-    </div>
+    </section>
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container">
@@ -50,14 +51,13 @@
             </div>
         </div>
     </div>
-</header>
-
-<body>
-    <div class="donuts">
         <div class="donutsPerMinute"></div>
         <div class="donutCount"></div>
         <div class="donutsPerClick"></div>
     </div>
+</header>
+
+<body>
     <div class="container">
         <div class="click">
             <button class="donutButton"><img src="images/YellowDonut.png" alt="Donut"></button>
