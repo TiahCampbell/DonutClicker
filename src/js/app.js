@@ -141,11 +141,9 @@ const clickResetButton = (button, donutMaker) =>{
 }
 
 const changeDonutImage = () => {
-    let currentColor;
-        if (!currentColor || !currentColor.length) {
-            currentColor = sprinkleColors.slice();
-            currentColor = currentColor.splice(Math.random() * currentColor.length | 0, 1);
-        };
+    let currentColor = sprinkleColors.slice();
+    currentColor = currentColor.splice((Math.random() * currentColor.length), 1);
+    donutButtonImage.src = currentColor;
     donutButtonImage.src = currentColor;
 }
 
