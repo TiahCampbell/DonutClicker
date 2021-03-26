@@ -20,11 +20,11 @@ let sprinkleColors = ['images/YellowDonut.png'];
 
 const updateGame = (donutMaker)=>{
     donutCountElement.innerText = "Donuts: " + donutMaker.getDonutCount().toFixed(0);
-    autoClickerCountElement.innerText = "Auto Clickers Owned: " + donutMaker.getAutoClickersOwned();
-    donutMultiplierCountElement.innerText = "Donut Multipliers Owned: " + donutMaker.getDonutMultipliersOwned();
+    autoClickerCountElement.innerText = "Bakers Employed: " + donutMaker.getAutoClickersOwned();
+    donutMultiplierCountElement.innerText = "Sprinkle Colors Researched: " + donutMaker.getDonutMultipliersOwned();
     donutsPerClickElement.innerText = "Donuts Per Click: " + donutMaker.getDonutsPerClick().toFixed(2);
-    autoClickerCostElement.innerText = "Purchase Cost: " + donutMaker.getAutoClickersCost() + " Donuts";
-    donutMultiplierCostElement.innerText = "Purchase Cost: " + donutMaker.getDonutMultipliersCost() + " Donuts";
+    autoClickerCostElement.innerText = "Hiring Cost: " + donutMaker.getAutoClickersCost() + " Donuts";
+    donutMultiplierCostElement.innerText = "Research Cost: " + donutMaker.getDonutMultipliersCost() + " Donuts";
     donutsPerMinuteElement.innerText = "Donuts Per Minute: " + donutMaker.getDonutsPerMinute().toFixed(2);
     bakeryLevelElement.innerText = "Bakery Level: " + donutMaker.getBakeryLevel();
     bakeryUpgradeCostElement.innerText = "Next Bakery Upgrade Cost: " + donutMaker.getBakeryUpgradeCost() + " Donuts";
@@ -139,7 +139,6 @@ const clickResetButton = (button, donutMaker) =>{
         updateGame(donutMaker);
     });
 }
-
 
 const changeDonutImage = () => {
     let currentColor;
