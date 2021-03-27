@@ -1,14 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
-</head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Module 4 Project</title>
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@100&display=swap" rel="stylesheet">
+    </head>
 <body>
+    <header>
+        <div class="donuts">
+        <section class="dropdown">
+            <button onclick="navDropdown()" class="dropbtn"><img src="./images/Dots.png" alt="More Info"></button>
+            <div id="navDropdown" class="dropdown-content">
+                <button onclick="document.getElementById('id02').style.display='block'" class="w3-button">Instructions</button>
+                <a href="https://www.youtube.com/watch?v=GXrG3gpN9bQ" target="_blank" rel="noopener noreferrer">Fred the
+                    Baker Baking Company</a>
+                <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" rel="noopener noreferrer">The Original
+                    Cookie Clicker</a>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">Meet the
+                    Creator</button>
+                <button class="gameResetButton">Reset Game</button>
+            </div>
+        </section>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <p>About Me</p>
+                    <p>My experience as a personal and group fitness trainer built a foundation of consistency and
+                        commitment. It also taught me to be comfortable and effective with communicating new concepts to
+                        customers and teammates. Currently I am in a fourteen week program to become a software developer. A
+                        year ago I was researching to find a career I could grow in. My brother, a computer scientist, knew
+                        I enjoyed puzzles and problem solving. He suggested a coding bootcamp to me and I have been hooked
+                        since day one of classes at WeCanCodeIt. I adapted from building targeted workouts, to building user
+                        focused full stack software. I cannot wait to see where this journey takes me.</p>
+                </div>
+                    <section class="getInTouch">
+                        <a href="https://www.linkedin.com/in/tiah-campbell-106226133/">
+                            <img src="./images/Linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/TiahCampbell">
+                            <img src="./images/Github.png" alt="Github">
+                        </a>
+                        <a href="https://tiahcampbell.github.io/">
+                            <img src="./images/Portfolio.png" alt="Portfolio">
+                        </a>
+                    </section>
+            </div>
+        </div>
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('id02').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <p>Instructions</p>
+                    <p>Welcome to the donut clicking game!</p>
+                        <ul>
+                            <li>Click the donut to start making donuts.</li>
+                            <li>Use your donuts to research new sprinkle colors. Each new sprinkle color multiplies your potential donuts by 2.2!</li>
+                            <li>Use your donuts to hire bakers. Each baker will make one donut per second for you!</li>
+                            <li>Use your donuts to upgrade your bakery. Each bakery upgrade gives you space to hire a new baker!</li>
+                            <li>Get out there and get clicking. There are donuts to make!</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+            <div class="donutsPerMinute"></div>
+            <div class="donutCount"></div>
+            <div class="donutsPerClick"></div>
+        </div>
+    </header>
     <div class="container">
-        <div class="anchor"></div>
+        <div class="click">
+            <button class="donutButton"><img src="images/YellowDonut.png" alt="Donut"></button>
+        </div>
+        <div class="research">
+            <div class="donutMultipliers">
+                <div class="donutMultiplierCount"></div>
+                <div class="donutMultiplierCost"></div>
+                <button class="donutMultiplierButton">RESEARCH ORANGE SPRINKLES</button>
+            </div>
+            <div class="autoClickers">
+                <div class="autoClickerCount"></div>
+                <div class="autoClickerCost"></div>
+                <button class="autoClickerButton">HIRE BAKER</button>
+            </div>
+            <div class="bakeryUpgrades">
+                <div class="bakeryLevel"></div>
+                <div class="bakeryUpgradeCost"></div>
+                <button class="bakeryUpgradeButton">UPGRADE BAKERY</button>
+            </div>
+        </div>
+        <footer>
+            &copy; 2021 Tiah Campbell
+        </footer>
     </div>
-    <script src="/src/app.js"></script>
+    <script src="/src/js/donutMaker.js"></script>
+    <script src="/src/js/app.js"></script>
 </body>
+
 </html>
