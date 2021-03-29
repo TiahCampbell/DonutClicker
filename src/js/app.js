@@ -144,7 +144,6 @@ const changeDonutImage = () => {
     let currentColor = sprinkleColors.slice();
     currentColor = currentColor.splice((Math.random() * currentColor.length), 1);
     donutButtonImage.src = currentColor;
-    donutButtonImage.src = currentColor;
 }
 
 clickDonutButton(donutButton, appDonutMaker);
